@@ -9,4 +9,4 @@ fuzzywuzzy
 streamlit_folium
 streamlit-aggrid
 streamlit_extras
-streamlit_plotly_events 
+streamlit_plotly_events == 0.0.5
