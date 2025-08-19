@@ -123,6 +123,13 @@ def create_plotly_avg_daily_combined_chart(df, base_font_size=13):
 
     return fig
 
+key = "enterprise_disabled_grid"
+license_key = None
+enable_enterprise = True
+if enable_enterprise:
+    key = "enterprise_enabled_grid"
+    license_key = license_key
+
 st.write('')
 st.header('📝 KPI Dashboard (Finance)')
 st.markdown("<hr style='margin:0; padding:0; border:1px solid #ccc'>", unsafe_allow_html=True)
@@ -223,7 +230,7 @@ if selected_points_pie:
         
         parts = clicked_id.split('/')
 
-        filtered_df = df_pie.iloc[:,1:].copy()
+        filtered_df = df_pie.copy()
         if len(parts) >= 1:
             filtered_df = filtered_df[filtered_df['Kat_2'] == parts[0]]
         if len(parts) >= 2:
@@ -233,5 +240,10 @@ if selected_points_pie:
         if len(parts) >= 4:
             filtered_df = filtered_df[filtered_df['Kat_5'] == parts[3]]
 
-
-        st.dataframe(filtered_df)
+        gb = GridOptionsBuilder.from_dataframe(filtered_df)
+        gridOptions = gb.build()
+        AgGrid(
+            filtered_df,
+            gridOptions, update_mode=GridUpdateMode.NO_UPDATE,
+            enable_enterprise_modules=enable_enterprise,
+            allow_unsafe_jscode=True)
