@@ -1,0 +1,11 @@
+lxml
+openpyxl
+gdown
+matplotlib
+plotly
+streamlit_option_menu 
+xlsxwriter
+fuzzywuzzy
+streamlit_folium
+streamlit-aggrid
+streamlit_extras
