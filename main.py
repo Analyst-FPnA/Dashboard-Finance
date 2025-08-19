@@ -244,8 +244,6 @@ with tab[0]:
                 margin=dict(t=5, l=10, r=10, b=50))
             st.markdown("<h5 style='font-family:Arial; font-weight:bold; font-size:16px;'>Cost and Profit Breakdown of Sales</h5>",unsafe_allow_html=True)
             st.markdown(f"<hr style='margin:0; padding:0; font-family:Arial;font-weight:bold; font-size:10px; border:1px solid #ccc'>{bulan.strftime('%b-%y')}</hr>", unsafe_allow_html=True)
-            selected_points_pie2 = st.plotly_chart(fig, on_select='rerun', selection_mode='points')
-            st.write(selected_points_pie2)
             selected_points_pie = plotly_events(fig, click_event=True)
             st.markdown("</div>", unsafe_allow_html=True)
 
