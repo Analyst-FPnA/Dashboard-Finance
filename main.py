@@ -188,7 +188,7 @@ with tab[0]:
                 }
                 """,
         ):
-            df_bar = df[df['Kat_5']=='Laba Operational'][['Month','Value']].reset_index(drop=True)
+            df_bar = df[df['Kat_5']=='Operational Income'][['Month','Value']].reset_index(drop=True)
             df_bar['%'] = df_bar['Value']/df.groupby('Month')['Value'].sum().reset_index()['Value'] 
             fig = create_plotly_avg_daily_combined_chart(df_bar)
             st.markdown("<h5 style='font-family:Arial; font-weight:bold; font-size:16px;'>Operational Income</h5>",unsafe_allow_html=True)
