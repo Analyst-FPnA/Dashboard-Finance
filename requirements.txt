@@ -2,7 +2,7 @@ lxml
 openpyxl
 gdown
 matplotlib
-plotly == 6.1.0
+plotly
 streamlit_option_menu 
 xlsxwriter
 fuzzywuzzy
