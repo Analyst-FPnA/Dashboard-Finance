@@ -106,7 +106,7 @@ def create_plotly_avg_daily_combined_chart(df, base_font_size=13):
             tickfont=dict(size=base_font_size-2,family="Arial Black")
         ),
         yaxis=dict(
-            title="Total Resto",
+            title="Value",
             tickfont=dict(color=color_bar, size=base_font_size-2,family="Arial Black"),
             range=[0, 14],
             showgrid=False
