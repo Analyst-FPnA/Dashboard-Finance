@@ -2,9 +2,7 @@ lxml
 openpyxl
 gdown
 matplotlib
-plotly
-altair.vegalite.v4
-streamlit==1.14.0
+plotly==5.14.1
 streamlit_option_menu 
 xlsxwriter
 fuzzywuzzy
