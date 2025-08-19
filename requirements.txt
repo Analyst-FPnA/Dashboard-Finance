@@ -3,7 +3,7 @@ openpyxl
 gdown
 matplotlib
 plotly
-streamlit == 5.8.0
+streamlit == 5.20.0
 streamlit_option_menu 
 xlsxwriter
 fuzzywuzzy
