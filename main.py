@@ -153,6 +153,32 @@ if enable_enterprise:
     license_key = license_key
 
 st.write('')
+
+users = {
+    "PPA": {"password": "ppajayajaya"},
+}
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+if "username" not in st.session_state:
+    st.session_state.username = ""
+
+st.write('')
+if not st.session_state.logged_in:
+    st.title("🔒 Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        user = users.get(username)
+        if user and user["password"] == password:
+            st.session_state.logged_in = True
+            st.session_state.username = username
+            st.success("Login successful")
+            st.rerun()
+        else:
+            st.error("Invalid username or password")
+    st.stop()
+    
 st.header('📝 KPI Dashboard (Finance)')
 st.markdown("<hr style='margin:0; padding:0; border:1px solid #ccc'>", unsafe_allow_html=True)
 tab = st.tabs(['Dashboard','Data'])
